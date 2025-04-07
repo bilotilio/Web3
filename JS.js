@@ -1,23 +1,4 @@
-// Список задач
-function addTask() {
-    let taskInput = document.getElementById("taskInput");
-    let taskText = taskInput.value.trim();
-    if (taskText === "") return;
 
-    let li = document.createElement("li");
-    li.innerHTML = `${taskText} <button onclick="removeTask(this)">❌</button>`;
-    li.addEventListener("click", function () {
-        li.classList.toggle("completed");
-    });
-    document.getElementById("taskList").appendChild(li);
-    taskInput.value = "";
-}
-
-function removeTask(button) {
-    button.parentElement.remove();
-}
-
-// Генератор паролів
 function generatePassword() {
     const length = parseInt(document.getElementById("length").value);
     const includeLower = document.getElementById("includeLower").checked;
